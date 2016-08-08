@@ -2,10 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 import {HackathonModel} from '../../models/hackathonModel';
 import {HackathonService} from '../../services/hackathonService';
+import {HackathonCardComponent} from '../hackathon/hackathonCardComponent';
 
 @Component({
 	selector: 'dashboard',
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, HackathonCardComponent],
 	templateUrl: 'app/components/dashboard/dashboard.html'
 })
 export class DashboardComponent implements OnInit {
@@ -20,7 +21,10 @@ export class DashboardComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this._service.getHackathons().then(data => this.hackathons = data);
+		this._service.getHackathons()
+            .map(res => res.json())
+            .toPromise()
+            .then(data => this.hackathons = data);
 	}
 
 	onHackathon(hackathon: HackathonModel) {

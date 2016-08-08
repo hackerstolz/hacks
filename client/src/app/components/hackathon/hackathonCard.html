@@ -1,0 +1,21 @@
+<header class="card-header">
+    <h1>
+        Test
+    </h1>
+    <h2>
+        {{ hackathon.name }}
+    </h2>
+    <h3>
+        {{ hackathon.date | date:'shortDate' }}, {{ hackathon.town }}
+    </h3>
+    <a role="button" [href]="getGMapsString(hackathon.address)" target="_blank">
+        <i class="ion-map"></i>
+    </a>
+</header>
+<div class="flex-container content">
+    <section class="description">
+        <p>
+            {{ hackathon.description }}
+        </p>
+    </section>
+</div>
