@@ -6,8 +6,7 @@ import {HackathonService} from '../../services/hackathonService';
 @Component({
 	selector: 'dashboard',
     directives: [ROUTER_DIRECTIVES],
-	templateUrl: 'app/components/dashboard/dashboard.html',
-	styleUrls: [ 'app/components/dashboard/dashboard.css' ]
+	templateUrl: 'app/components/dashboard/dashboard.html'
 })
 export class DashboardComponent implements OnInit {
 

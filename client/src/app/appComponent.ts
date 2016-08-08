@@ -17,15 +17,12 @@ const routes: RouterConfig = [{
     component: HackathonComponent
 }];
 
-// XXX: Hier rendert er die navi nicht mehr bei /dashboard und bei /hackathons
-
 @Component({
     selector: 'app-root',
     directives: [ROUTER_DIRECTIVES, SidebarComponent],
     providers: [HackathonService],
     template: `<sidebar></sidebar>
-               <router-outlet></router-outlet>`,
-    styles: [`:host { display: flex; font: normal 16px "Source Sans Pro"; min-height: 100vh; }`]
+               <router-outlet></router-outlet>`
 })
 export class AppComponent {
     constructor() {
