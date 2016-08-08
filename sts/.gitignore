@@ -1,0 +1,47 @@
+.idea
+.vscode
+build
+dist
+typings
+coverage
+node_modules
+
+*.log
+
+[Bb]in/
+[Oo]bj/
+<<<<<<< Updated upstream
+=======
+dist/
+tmp/
+build/
+
+# dependencies
+node_modules/
+bower_components/
+
+# IDEs and editors
+.idea
+.vscode/
+.project/
+.settings/
+.classpath
+*.launch
+
+# misc
+.sass-cache/
+connect.lock
+/libpeerconnection.log
+coverage/*
+npm-debug.log
+testem.log
+typings
+
+# e2e
+e2e/*.js
+e2e/*.map
+>>>>>>> Stashed changes
+
+.DS_Store
+/src/sts/project.lock.json
+/src/sts/.idea.sts

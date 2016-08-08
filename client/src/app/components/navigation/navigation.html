@@ -1,0 +1,43 @@
+<header id="product-title">
+    <h1>
+        {Hacks}
+    </h1>
+</header>
+<section id="user-info">
+    <header>
+        <figure>
+            <img src="https://avatars1.githubusercontent.com/u/740791?v=3&s=90" alt="Manuel Rauber">
+        </figure>
+        <h1>
+            {{ user.name }}
+        </h1>
+        <h2>
+            {{ user.title }}
+        </h2>
+        <h3>
+            <i class="ion-android-pin"></i>
+            {{ user.location }}
+        </h3>
+    </header>
+</section>
+<section id="navigation">
+    <header>
+        <h1>Navigation</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <i class="ion-radio-waves"></i>
+                <a [routerLink]="['/dashboard']">
+                  Dashboard
+                </a>
+            </li>
+            <li>
+                <i class="ion-ios-people"></i>
+                <a [routerLink]="['/hackathons']">
+                  My Events
+                </a>
+            </li>
+        </ul>
+    </nav>
+</section>
