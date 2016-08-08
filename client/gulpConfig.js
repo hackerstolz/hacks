@@ -67,6 +67,7 @@ const config = {
         resourcesFolder: './resources/',
         hooksFolder: './cordova/hooks/',
         appFolder: 'app',
+        assetFolder: 'assets',
         stylesFolder: 'css',
         minified: {
             js: 'app.js',

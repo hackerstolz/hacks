@@ -82,7 +82,7 @@
 
         gulp.task('[private-web]:copy-app-assets', function () {
             return gulp.src(config.source.files.app.assets)
-                .pipe(gulp.dest(path.join(config.targets.buildFolder, config.targets.appFolder)));
+                .pipe(gulp.dest(path.join(config.targets.buildFolder, config.targets.assetFolder)));
         });
 
         gulp.task('[private-web]:vendor-css', function () {
