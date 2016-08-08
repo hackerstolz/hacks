@@ -20,20 +20,20 @@
         </h3>
     </header>
 </section>
-<section id="navigation">
+<section class="sidebar-group">
     <header>
         <h1>Navigation</h1>
     </header>
-    <nav>
+    <nav role="navigation">
         <button [routerLink]="['/dashboard']">
             <i class="ion-radio-waves"></i>
-            <a >
+            <a>
                 Dashboard
             </a>
         </button>
         <button [routerLink]="['/hackathons']">
             <i class="ion-ios-people"></i>
-            <a >
+            <a>
                 My Events
             </a>
         </button>
@@ -59,6 +59,25 @@
             <i class="ion-ios-gear"></i>
             <a>
                 Settings
+            </a>
+        </button>
+    </nav>
+</section>
+<section class="sidebar-group">
+    <header>
+        <h1>Recently Visited</h1>
+    </header>
+    <nav>
+        <button>
+            <i class="ion-flash"></i>
+            <a>
+                Inno{Hacks} Mannheim
+            </a>
+        </button>
+        <button>
+            <i class="ion-flash"></i>
+            <a>
+                Hackathon
             </a>
         </button>
     </nav>
