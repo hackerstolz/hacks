@@ -8,12 +8,11 @@ type User = {
 }
 
 @Component({
-    selector: 'navigation',
+    selector: 'sidebar',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/components/navigation/navigation.html',
-    styleUrls: [ 'app/components/navigation/navigation.css' ]
+    templateUrl: 'app/components/sidebar/sidebar.html'
 })
-export class NavigationComponent {
+export class SidebarComponent {
 
     private _user;
 
