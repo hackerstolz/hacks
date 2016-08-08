@@ -17,10 +17,5 @@ export class HackathonService {
 	getHackathons() {
 		return this._http.get('http://localhost:3000/hackathons');
 	}
-
-	getHackathon(id: number) {
-		return Promise.resolve(hackathonsMock).then(data => data.filter(hackathon => hackathon.id === id)[0]);
-	}
-
-};
+}
 
