@@ -21,12 +21,15 @@ const config = {
             ],
             systemSetupScript: './src/systemSetup.js',
             app: {
-                everything: ['./src/app/**/*', './src/systemSetup.js'],
+                everything: ['./src/app/**/*', './src/less/**/*.less', './src/systemSetup.js'],
                 ts: [
                     './src/app/**/*.ts'
                 ],
                 html: [
                     './src/app/**/*.html'
+                ],
+                less: [
+                    './src/less/app.less'
                 ],
                 css: [
                     './src/css/**/*.css'

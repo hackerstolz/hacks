@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {provideRouter, RouterConfig, ROUTER_DIRECTIVES} from '@angular/router';
 import {DashboardComponent} from './components/dashboard/dashboardComponent';
 import {HackathonComponent} from './components/hackathon/hackathonComponent';
-import {NavigationComponent} from './components/navigation/navigationComponent';
 import {HackathonService} from './services/hackathonService';
+import {SidebarComponent} from './components/sidebar/sidebarComponent';
 
 const routes: RouterConfig = [{
     path: '',
@@ -21,9 +21,9 @@ const routes: RouterConfig = [{
 
 @Component({
     selector: 'app-root',
-    directives: [ROUTER_DIRECTIVES, NavigationComponent],
+    directives: [ROUTER_DIRECTIVES, SidebarComponent],
     providers: [HackathonService],
-    template: `<navigation></navigation>
+    template: `<sidebar></sidebar>
                <router-outlet></router-outlet>`,
     styles: [`:host { display: flex; font: normal 16px "Source Sans Pro"; min-height: 100vh; }`]
 })

@@ -1,0 +1,103 @@
+sidebar {
+    background: #465153;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: 350px;
+    min-width: 300px;
+
+    header#product-title {
+        background: #2e393b;
+        color: #fff;
+        width: 100%;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 { font: normal 18px "Montserrat", Helvetica, Arial, sans-serif; }
+    }
+    section#user-info {
+        background: #11a7f3;
+        color: white;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 0 20px;
+
+        header {
+            &:after {
+                content: '';
+                background: linear-gradient(rgba(0, 0, 0, .4), transparent);
+                height: 10px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 100%;
+            }
+
+            h1, h2, h3 {
+                float: left;
+                width: ~"calc(100% - 125px)";
+            }
+
+            h1 {
+                font: 400 24px "Source Sans Pro", Helvetica, Arial, sans-serif;
+                text-shadow: 0 2px 0 rgba(0, 0, 0, .3);
+                margin: 0px;
+            }
+
+            h2 {
+                font: 400 14px "Source Sans Pro", Helvetica, Arial, sans-serif;
+                margin: 0;
+            }
+
+            h3 {
+                font: 400 14px "Source Sans Pro", Helvetica, Arial, sans-serif;
+                text-transform: uppercase;
+                margin: 7px 0 0 0;
+            }
+
+            figure {
+                width: 75px;
+                height: 75px;
+                border: 2px solid white;
+                border-radius: 100%;
+                overflow: hidden;
+                float: left;
+                margin: 0px 15px 0px 0px;
+            }
+        }
+    }
+
+    section#navigation {
+        margin: 50px 0 0 0;
+        padding: 0 20px;
+    }
+    section#navigation header h1 {
+        font: normal 14px "Montserrat", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        color: white;
+    }
+    section#navigation nav ul {
+        list-style: none;
+        padding: 10px 0;
+    }
+    section#navigation nav ul li {
+        color: white;
+        font-size: 26px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    section#navigation nav ul li a {
+        font: normal 17px "Source Sans Pro", Helvetica, Arial, sans-serif;
+        color: white;
+        margin: 10px 0;
+        padding: 0 20px;
+    }
+}
+
+
+

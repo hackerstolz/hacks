@@ -19,7 +19,8 @@
             rename = require('gulp-rename'),
             inject = require('gulp-inject'),
             uglify = require('gulp-uglify'),
-            Builder = require('systemjs-builder');
+            Builder = require('systemjs-builder'),
+            less = require('gulp-less');
 
         gulp.task('[private-web]:copy-template', function () {
             var sources = gulp.src(config.source.files.injectables);
@@ -91,6 +92,14 @@
                 .pipe(gulp.dest(path.join(config.targets.buildFolder, config.targets.stylesFolder)));
         });
 
+        gulp.task('[private-web]:compile-less', function () {
+            return gulp.src(config.source.files.app.less)
+                .pipe(less({
+                    paths: [ path.join(__dirname, 'includes') ]
+                }))
+                .pipe(gulp.dest(path.join(config.targets.buildFolder, config.targets.stylesFolder)));
+        });
+
         gulp.task('[private-web]:copy-app-styles', function () {
             return gulp.src(config.source.files.app.css)
                 .pipe(cleanCss())
@@ -134,6 +143,7 @@
                     '[private-web]:vendor-css',
                     '[private-web]:copy-fonts',
                     '[private-web]:copy-app-html',
+                    '[private-web]:compile-less',
                     '[private-web]:copy-app-styles',
                     '[private-web]:copy-component-styles',
                     '[private-web]:copy-app-assets'
