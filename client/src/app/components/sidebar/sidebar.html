@@ -25,19 +25,41 @@
         <h1>Navigation</h1>
     </header>
     <nav>
-        <ul>
-            <li>
-                <i class="ion-radio-waves"></i>
-                <a [routerLink]="['/dashboard']">
-                  Dashboard
-                </a>
-            </li>
-            <li>
-                <i class="ion-ios-people"></i>
-                <a [routerLink]="['/hackathons']">
-                  My Events
-                </a>
-            </li>
-        </ul>
+        <button [routerLink]="['/dashboard']">
+            <i class="ion-radio-waves"></i>
+            <a >
+                Dashboard
+            </a>
+        </button>
+        <button [routerLink]="['/hackathons']">
+            <i class="ion-ios-people"></i>
+            <a >
+                My Events
+            </a>
+        </button>
+        <button [routerLink]="['/hackathons']">
+            <i class="ion-chatbubbles"></i>
+            <a>
+                Social
+            </a>
+        </button>
+        <button [routerLink]="['/hackathons']">
+            <i class="ion-clipboard"></i>
+            <a>
+                Documents
+            </a>
+        </button>
+        <button [routerLink]="['/hackathons']">
+            <i class="ion-person-stalker"></i>
+            <a>
+                Users
+            </a>
+        </button>
+        <button [routerLink]="['/hackathons']">
+            <i class="ion-ios-gear"></i>
+            <a>
+                Settings
+            </a>
+        </button>
     </nav>
 </section>
