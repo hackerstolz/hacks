@@ -1,9 +1,13 @@
 @import 'components/_sidebar';
+@import 'components/_hackathonCard';
+
+* { box-sizing: border-box; }
+
+a, button { cursor: pointer; }
 
 button {
     background: none;
     border: none;
-    cursor: pointer;
 }
 
 app-root {
@@ -11,4 +15,12 @@ app-root {
 
     display: flex;
     min-height: 100vh;
+}
+
+dashboard {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
