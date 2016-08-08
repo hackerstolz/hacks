@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HackathonModel} from '../models/hackathonModel';
+import {Http} from '@angular/http';
 
-const HACKATHONS: HackathonModel[] = [
+const hackathonsMock: HackathonModel[] = [
 	{ id: 0, name: 'First Hackathon' },
 	{ id: 1, name: 'Woop Woop Awesome' },
 	{ id: 2, name: 'ML Meetup HD' }
@@ -9,13 +10,16 @@ const HACKATHONS: HackathonModel[] = [
 
 @Injectable()
 export class HackathonService {
+    constructor(private _http: Http) {
+
+    }
 
 	getHackathons() {
-		return Promise.resolve(HACKATHONS);
+		return this._http.get('http://localhost:3000/hackathons');
 	}
 
 	getHackathon(id: number) {
-		return Promise.resolve(HACKATHONS).then(data => data.filter(hackathon => hackathon.id === id)[0]);
+		return Promise.resolve(hackathonsMock).then(data => data.filter(hackathon => hackathon.id === id)[0]);
 	}
 
 };
