@@ -12,6 +12,7 @@ const config = {
                 './dist/www/scripts/systemSetup.js',
                 './dist/www/css/vendor.min.css',
                 './dist/www/css/app.css',
+                './dist/www/css/reset.css',
                 './dist/www/scripts/shim.min.js',
                 './dist/www/scripts/zone.js',
                 './dist/www/scripts/reflect.js'
@@ -21,7 +22,7 @@ const config = {
             ],
             systemSetupScript: './src/systemSetup.js',
             app: {
-                everything: ['./src/app/**/*', './src/less/**/*.less', './src/systemSetup.js'],
+                everything: ['./src/app/**/*', './src/**/*.less', './src/systemSetup.js'],
                 ts: [
                     './src/app/**/*.ts'
                 ],
