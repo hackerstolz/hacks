@@ -1,0 +1,13 @@
+{
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "bunyan": "registry:dt/bunyan#0.0.0+20160412155112",
+    "mocha": "registry:dt/mocha#2.2.5+20160619032855",
+    "node": "registry:dt/node#6.0.0+20160621231320",
+    "restify": "registry:dt/restify#2.0.0+20160602145247",
+    "sequelize": "registry:dt/sequelize#3.4.1+20160622054214"
+  },
+  "dependencies": {
+    "chai": "registry:npm/chai#3.5.0+20160415060238"
+  }
+}

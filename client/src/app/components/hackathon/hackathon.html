@@ -1,0 +1,13 @@
+
+<div *ngIf="hackathon">
+	<h2>{{hackathon.name}} Details</div>
+	<div>
+		<label>id:</label> {{hackathon.id}}
+	</div>
+	<div>
+		<label>name:</label>
+		<input [(ngModel)]="hackathon.name" placeholder="name" />
+	</div>
+	<button [routerLink]="['/dashboard']">Back</button>
+</div>
+
