@@ -23,9 +23,12 @@ hackathon-card {
         height: 150px;
         width: 100%;
 
+        align-content: flex-end;
+        flex-wrap: wrap;
+        display: flex;
         float: left;
         margin: 0;
-        padding: 0 15px;
+        padding: 15px;
         position: relative;
         z-index: 1;
 
@@ -42,9 +45,11 @@ hackathon-card {
             z-index: 2;
         }
 
-        h1, h2, h3 {
+        h1, h2 {
             color: white;
             text-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+
+            width: 100%;
 
             position: relative;
             z-index: 3;
@@ -54,16 +59,13 @@ hackathon-card {
             font-size: 30px;
             line-height: 22px;
 
-            margin: 35px 0;
+            margin: 0;
+            padding: 10px 0;
         }
 
         h2 {
             font: normal 16px "Montserrat";
             text-transform: uppercase;
-        }
-
-        h3 {
-            font-size: 18px;
         }
 
         button, [role="button"] {
@@ -103,10 +105,36 @@ hackathon-card {
     }
 
     .content {
+        float: left;
         padding: 15px;
+
+        .meta {
+            width: 100%;
+
+            border-bottom: 1px solid #c1c1c1;
+            overflow: hidden;
+            padding-bottom: 25px;
+
+            time {
+                width: 40px;
+
+                font: normal 20px "Source Sans Pro";
+                color: #6e6865;
+
+                float: left;
+                text-align: center;
+
+                strong {
+                    font: bold 32px "Montserrat";
+                    line-height: 30px;
+                    display: block;
+                }
+            }
+        }
 
         .description {
             min-height: 80px;
+            padding-top: 15px;
 
             h1 {
                 font: bold 15px "Source Sans Pro";
@@ -115,6 +143,8 @@ hackathon-card {
 
             p {
                 font: normal 15px "Source Sans Pro";
+                color: #6e6865;
+                line-height: 24px;
             }
         }
     }

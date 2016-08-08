@@ -20,15 +20,19 @@ export class HackathonController {
         res.json([{
             id: 1,
             name: 'Inno{Hacks}',
+            type: '3-day hackathon',
+            host: 'Innovex AG',
             address: 'Ludwig-Erhard-Allee 6, 76131 Karlsruhe',
-            town: 'Karlsruhe',
+            town: 'Karlsruhe, DE',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
             date: new Date().toISOString()
         }, {
             id: 2,
-            name: 'Hackarino',
+            name: 'HackNation',
+            type: '2-day hackathon',
+            host: 'Thinktecture AG',
             address: 'Ludwig-Erhard-Allee 12, 76131 Karlsruhe',
-            town: 'Karlsruhe',
+            town: 'Karlsruhe, DE',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
             date: new Date().toISOString()
         }]);

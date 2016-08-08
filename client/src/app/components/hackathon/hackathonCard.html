@@ -1,18 +1,23 @@
 <header class="card-header">
     <h1>
-        Test
+        {{ hackathon.name }}
     </h1>
     <h2>
-        {{ hackathon.name }}
+        {{ hackathon.type }}
     </h2>
-    <h3>
-        {{ hackathon.date | date:'shortDate' }}, {{ hackathon.town }}
-    </h3>
     <a role="button" [href]="getGMapsString(hackathon.address)" target="_blank">
         <i class="ion-map"></i>
     </a>
 </header>
 <div class="flex-container content">
+    <section class="meta">
+        <time>
+            <strong>{{ hackathon.date | date:'d' }}</strong>
+            {{ hackathon.date | date:'MMM' }}
+        </time>
+        {{ hackathon.host }}
+        {{ hackathon.town }}
+    </section>
     <section class="description">
         <p>
             {{ hackathon.description }}
