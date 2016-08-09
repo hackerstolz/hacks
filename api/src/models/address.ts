@@ -8,7 +8,7 @@ export interface AddressPojo {
     lastName: string
 }
 
-export function initialize(sequelize) {
+export function addressInitialize(sequelize) {
     return sequelize.define('Address', {
         id: {
             type: Sequelize.INTEGER,
@@ -42,7 +42,7 @@ export function initialize(sequelize) {
     });
 }
 
-export interface AddressInstance extends Sequelize.Instance<AddressInstance, AddressPojo>, AddressPojo {
+export interface AddressInstance extends Sequelize.Instance<AddressPojo>, AddressPojo {
 }
 
 export interface AddressModel extends Sequelize.Model<AddressInstance, AddressPojo>, AddressPojo {

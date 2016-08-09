@@ -1,5 +1,5 @@
 import Sequelize = require('sequelize');
-import {Models} from './models';
+import {Models} from './index';
 
 export interface UserPojo {
     id?: number,
@@ -7,7 +7,7 @@ export interface UserPojo {
     lastName: string
 }
 
-export function initialize(sequelize) {
+export function userInitialize(sequelize) {
     const User = sequelize.define('User', {
         id: {
             type: Sequelize.INTEGER,
@@ -31,7 +31,7 @@ export function initialize(sequelize) {
     return User;
 }
 
-export interface UserInstance extends Sequelize.Instance<UserInstance, UserPojo>, UserPojo {
+export interface UserInstance extends Sequelize.Instance<UserPojo>, UserPojo {
 }
 
 export interface UserModel extends Sequelize.Model<UserInstance, UserPojo>, UserPojo {

@@ -52,7 +52,7 @@ export class Server {
         const server = restify.createServer();
         server.use(restify.CORS());
         server.use(restify.queryParser());
-        server.use(restify.bodyParser());
+        server.use(restify.bodyParser({ mapParams: false }));
 
         return server;
     }
