@@ -1,5 +1,5 @@
 import Sequelize = require('sequelize');
-import {MODELS, Models} from '../models/models';
+import {MODELS, Models} from '../models/index';
 
 export interface DatabaseConfiguration {
     connectionString: string

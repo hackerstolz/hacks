@@ -2,10 +2,12 @@
   "globalDependencies": {
     "bunyan": "registry:dt/bunyan#0.0.0+20160412155112",
     "debug": "registry:dt/debug#0.0.0+20160317120654",
-    "mocha": "registry:dt/mocha#2.2.5+20160619032855",
-    "node": "registry:dt/node#6.0.0+20160621231320",
-    "restify": "registry:dt/restify#2.0.0+20160602145247",
-    "sequelize": "registry:dt/sequelize#3.4.1+20160622054214"
+    "lodash": "registry:dt/lodash#4.14.0+20160802150749",
+    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
+    "node": "registry:dt/node#6.0.0+20160807145350",
+    "restify": "registry:dt/restify#2.0.0+20160726153409",
+    "sequelize": "registry:dt/sequelize#3.4.1+20160802154903",
+    "validator": "registry:dt/validator#4.5.1+20160316155526"
   },
   "dependencies": {
     "chai": "registry:npm/chai#3.5.0+20160415060238"

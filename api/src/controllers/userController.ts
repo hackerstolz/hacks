@@ -1,6 +1,7 @@
 import {Route, GetRoute, PostRoute} from '../server/route';
 import {Request, Response} from 'restify';
 import {userService} from '../services';
+import {UserPojo} from '../models/user';
 
 export class UserController {
     public _routes: Route[];
@@ -19,12 +20,12 @@ export class UserController {
     }
 
     getAllUsers(req: Request, res: Response) {
-        userService.readUsersGetAll()
+        userService.getAll()
             .then((users) => res.json(users));
     }
 
     createUser(req: Request, res: Response) {
-        userService.writeUserCreate(req.params.name, req.params.firstName, req.params.lastName)
+        userService.create(<UserPojo>req.params)
             .then(() => res.send(200, 'Successfully created user'));
     }
 }

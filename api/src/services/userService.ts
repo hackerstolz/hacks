@@ -1,10 +1,8 @@
-import {UserPojo} from '../models/user';
+import {UserPojo, UserInstance} from '../models/user';
 import {DatabaseProvider} from '../database/index';
 
 export class UserService {
-    writeUserCreate(name: string, firstName?: string, lastName?: string) {
-        const user: UserPojo = { name, firstName, lastName };
-
+    create(user: UserPojo) {
         return DatabaseProvider.get()
             .then(db => db.models.Users.create(user))
             .catch((err) => {
@@ -12,8 +10,9 @@ export class UserService {
             });
     }
 
-    readUsersGetAll() {
+    getAll(): Promise<UserInstance[]> {
         return DatabaseProvider.get()
             .then(db => db.models.Users.findAll());
+            //.then((results: UserInstance[]) => );
     }
 }
