@@ -68,6 +68,21 @@ hackathon-card {
             text-transform: uppercase;
         }
 
+        .fab-wrapper {
+            position: absolute;
+            right: 15px;
+            top: 125px;
+            z-index: 5;
+
+            text-align: center;
+
+            span {
+                font: 600 16px "Source Sans Pro";
+                color: #6e6865;
+                line-height: 45px;
+            }
+        }
+
         button, [role="button"] {
             background: #f42350;
 
@@ -81,10 +96,6 @@ hackathon-card {
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
-            right: 15px;
-            bottom: -25px;
-            z-index: 5;
             transition: .3s all;
 
             &:hover {
@@ -126,7 +137,23 @@ hackathon-card {
 
                 strong {
                     font: bold 32px "Montserrat";
-                    line-height: 30px;
+                    line-height: 31px;
+                    display: block;
+                }
+            }
+
+            address {
+                font: normal 20px "Source Sans Pro";
+                color: #606060;
+                line-height: 29px;
+                float: left;
+                padding-left: 25px;
+
+                a {
+                    font-size: 28px;
+                    font-weight: 500;
+                    text-decoration: none;
+                    color: #11a7f3;
                     display: block;
                 }
             }

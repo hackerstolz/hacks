@@ -3,6 +3,7 @@ import {provideRouter, RouterConfig, ROUTER_DIRECTIVES} from '@angular/router';
 import {DashboardComponent} from './components/dashboard/dashboardComponent';
 import {HackathonService} from './services/hackathonService';
 import {SidebarComponent} from './components/sidebar/sidebarComponent';
+import {LocationService} from './services/locationService';
 
 const routes: RouterConfig = [{
     path: '',
@@ -16,7 +17,7 @@ const routes: RouterConfig = [{
 @Component({
     selector: 'app-root',
     directives: [ROUTER_DIRECTIVES, SidebarComponent],
-    providers: [HackathonService],
+    providers: [HackathonService, LocationService],
     template: `<sidebar></sidebar>
                <router-outlet></router-outlet>`
 })
