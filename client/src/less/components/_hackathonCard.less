@@ -175,4 +175,39 @@ hackathon-card {
             }
         }
     }
+
+    footer {
+        width: 100%;
+
+        font: normal 16px "Source Sans Pro";
+        color: #606060;
+
+        float: left;
+        padding: 7px 15px;
+
+        a {
+            text-decoration: none;
+            padding: 0 15px 0 0;
+
+            &:hover i { color: #11a7f3; }
+            &:last-of-type { padding-right: 0; }
+        }
+
+        i {
+            font-size: 24px;
+            color: #606060;
+        }
+
+        .attendees {
+            float: left;
+            display: flex;
+            align-items: center;
+
+            span { padding: 0 10px; }
+        }
+
+        .actions {
+            float: right;
+        }
+    }
 }
