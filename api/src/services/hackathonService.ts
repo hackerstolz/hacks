@@ -12,6 +12,6 @@ export class HackathonService {
 
     getAll() {
         return DatabaseProvider.get()
-            .then(db => db.models.Users.findAll());
+            .then(db => db.models.Hackathons.findAll());
     }
 }

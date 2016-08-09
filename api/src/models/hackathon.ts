@@ -1,67 +1,17 @@
-/*
-import Sequelize = require('sequelize');
-import {database} from '../database';
-
-import {Address, AddressModel} from './Address';
-import {Hackathon, HackathonModel} from './Hackathon';
-import {Orga, OrgaModel} from './Orga';
-
-export const Hackathon = database.define('hackathon', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
-    title: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    topic: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    begins: {
-        type: Sequelize.DATE,
-        allowNull: false
-    },
-    ends: {
-        type: Sequelize.DATE,
-        allowNull: false
-    }
-});
-
-
-export const LinkModel = database.define('hackathon-link', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
-    title: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    href: {
-        type: Sequelize.STRING,
-        allowNull: false
-    }
-});
-
-
-HackathonModel.hasMany(AddressModel, { as: 'addresses' });
-HackathonModel.hasMany(UserModel, { as: 'members' });
-HackathonModel.hasMany(OrgaModel, { as: 'orgas' });
-HackathonModel.hasMany(LinkModel, { as: 'links' });
-
-*/
 import Sequelize = require('sequelize');
 
 export interface HackathonPojo {
-    id?: number
+    id?: number;
+    title: string;
+    description: string;
+    unixStartTime: number;
+    unixEndTime: number;
+    location: string;
+    published: boolean;
 }
 
 export function hackathonInitialize(sequelize) {
-    const Hackathon = sequelize.define('Hackathon', {
+    return sequelize.define('Hackathon', {
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
@@ -71,21 +21,27 @@ export function hackathonInitialize(sequelize) {
             type: Sequelize.STRING,
             allowNull: false
         },
-        topic: {
+        description: {
+            type: Sequelize.TEXT,
+            allowNull: false
+        },
+        unixStartTime: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
+        unixEndTime: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
+        location: {
             type: Sequelize.STRING,
             allowNull: false
         },
-        begins: {
-            type: Sequelize.DATE,
-            allowNull: false
-        },
-        ends: {
-            type: Sequelize.DATE,
+        published: {
+            type: Sequelize.BOOLEAN,
             allowNull: false
         }
     });
-
-    return Hackathon;
 }
 
 export interface HackathonInstance extends Sequelize.Instance<HackathonPojo>, HackathonPojo {
