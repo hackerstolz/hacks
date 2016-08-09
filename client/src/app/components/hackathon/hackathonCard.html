@@ -5,18 +5,23 @@
     <h2>
         {{ hackathon.type }}
     </h2>
-    <a role="button" [href]="getGMapsString(hackathon.address)" target="_blank">
-        <i class="ion-map"></i>
-    </a>
+    <div class="fab-wrapper">
+        <a role="button" [href]="getGMapsString(hackathon.address)" target="_blank">
+            <i class="ion-map"></i>
+        </a>
+        <span>{{ getDistance(hackathon.address) }}</span>
+    </div>
 </header>
 <div class="flex-container content">
     <section class="meta">
-        <time>
+        <time [attr.datetime]="hackathon.date">
             <strong>{{ hackathon.date | date:'d' }}</strong>
             {{ hackathon.date | date:'MMM' }}
         </time>
-        {{ hackathon.host }}
-        {{ hackathon.town }}
+        <address>
+            <a href="">{{ hackathon.host }}</a>
+            {{ hackathon.town }}
+        </address>
     </section>
     <section class="description">
         <p>

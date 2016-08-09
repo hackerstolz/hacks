@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {LocationService} from '../../services/locationService';
 
 @Component({
     selector: 'hackathon-card',
@@ -7,11 +8,15 @@ import {Component, Input} from '@angular/core';
 export class HackathonCardComponent {
     @Input('data') hackathon: any;
 
-    constructor() {
+    constructor(private _locationService: LocationService) {
 
     }
 
     public getGMapsString(address: string): string {
-        return 'http://maps.google.com/?daddr=' + address.replace(',', '').replace(' ', '+');
+        return this._locationService.getGMapsString(address);
+    }
+
+    public getDistance(address: string): string {
+        return this._locationService.getDistance(address);
     }
 }
