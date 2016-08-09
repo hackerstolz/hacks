@@ -1,12 +1,12 @@
 sidebar {
+    width: 350px;
+
     background: #465153;
     display: flex;
-    flex: 1;
     flex-direction: column;
+    flex-shrink: 0;
 
     height: 100vh;
-    max-width: 350px;
-    min-width: 300px;
 
     header#product-title {
         background: #2e393b;
@@ -119,5 +119,9 @@ sidebar {
     }
 }
 
-
-
+@media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 420px) {
+    sidebar {
+        position: absolute;
+        left: -350px;
+    }
+}
