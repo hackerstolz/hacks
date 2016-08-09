@@ -8,9 +8,10 @@ type User = {
 }
 
 @Component({
+    moduleId: __moduleName,
     selector: 'sidebar',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/components/sidebar/sidebar.html'
+    templateUrl: 'sidebar.html'
 })
 export class SidebarComponent {
 
