@@ -1,14 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router';
-import {HackathonModel} from '../../models/hackathonModel';
-import {HackathonService} from '../../services/hackathonService';
+import {HackathonModel} from '../../models/hackathon';
+import {HackathonService} from '../../services/hackathon';
 import {HackathonCardComponent} from '../hackathon/hackathonCardComponent';
-import {LocationService, Location} from '../../services/locationService';
+import {LocationService, Location} from '../../services/location';
 
 @Component({
+    moduleId: __moduleName,
 	selector: 'dashboard',
     directives: [ROUTER_DIRECTIVES, HackathonCardComponent],
-	templateUrl: 'app/components/dashboard/dashboard.html'
+	templateUrl: 'dashboard.html'
 })
 export class DashboardComponent implements OnInit {
 	public hackathons: HackathonModel[] = [];

@@ -18,10 +18,10 @@ npm run-script watch;
 Naming is built by "Classname", "filename"
 
 * Model: Sample, sample.ts
-* Component: SampleComponent, sampleComponent.ts, sample.html
-* Directive: SampleDirective, sampleDirective.ts
-* Pipe: SamplePipe, samplePipe.ts
-* Service: SampleService, sampleService.ts
+* Component: SampleComponent, sample.ts, sample.html
+* Directive: SampleDirective, sample.ts
+* Pipe: SamplePipe, sample.ts
+* Service: SampleService, sample.ts
 
 ## Project structure
 

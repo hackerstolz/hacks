@@ -1,9 +1,10 @@
 import {Component, Input} from '@angular/core';
-import {LocationService} from '../../services/locationService';
+import {LocationService} from '../../services/location';
 
 @Component({
+    moduleId: __moduleName,
     selector: 'hackathon-card',
-    templateUrl: 'app/components/hackathon/hackathonCard.html'
+    templateUrl: 'hackathonCard.html'
 })
 export class HackathonCardComponent {
     @Input('data') hackathon: any;

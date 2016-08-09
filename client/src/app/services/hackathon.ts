@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HackathonModel} from '../models/hackathonModel';
+import {HackathonModel} from '../models/hackathon';
 import {Http} from '@angular/http';
 
 const hackathonsMock: HackathonModel[] = [
