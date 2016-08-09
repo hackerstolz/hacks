@@ -19,34 +19,8 @@ export class HackathonController {
     }
 
     getAllHackathons(req: Request, res: Response) {
-        res.json([{
-            id: 1,
-            name: 'Inno{Hacks}',
-            type: '3-day hackathon',
-            host: 'Innovex AG',
-            address: 'Ludwig-Erhard-Allee 6, 76131 Karlsruhe',
-            town: 'Karlsruhe, DE',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
-            date: new Date().toISOString()
-        }, {
-            id: 2,
-            name: 'HackNation',
-            type: '2-day hackathon',
-            host: 'Thinktecture AG',
-            address: 'Ludwig-Erhard-Allee 12, 76131 Karlsruhe',
-            town: 'Karlsruhe, DE',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
-            date: new Date().toISOString()
-        }, {
-            id: 3,
-            name: 'Bio{Hacks}',
-            type: '1-day hackathon',
-            host: 'Thinktecture AG',
-            address: 'Ludwig-Erhard-Allee 12, 76131 Karlsruhe',
-            town: 'Karlsruhe, DE',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
-            date: new Date().toISOString()
-        }]);
+        hackathonService.getAll()
+            .then(result => res.json(200, result));
     }
 
     createHackathon(req: Request, res: Response) {
