@@ -1,5 +1,4 @@
-@import 'components/_sidebar';
-@import 'components/_hackathonCard';
+@import 'components/_index.less';
 
 * { box-sizing: border-box; }
 
@@ -20,7 +19,11 @@ app-root {
 dashboard {
     display: flex;
     flex: 1;
-    flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
 }
+
+@media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 420px) {
+    dashboard { padding-top: 75px; }
+}
+
