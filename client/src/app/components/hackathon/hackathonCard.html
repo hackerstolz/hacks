@@ -1,15 +1,15 @@
 <header class="card-header">
     <h1>
-        {{ hackathon.name }}
+        {{ hackathon.title }}
     </h1>
     <h2>
         {{ hackathon.type }}
     </h2>
     <div class="fab-wrapper">
-        <a role="button" [href]="getGMapsString(hackathon.address)" target="_blank">
+        <a role="button" [href]="getGMapsString(hackathon.location)" target="_blank">
             <i class="ion-map"></i>
         </a>
-        <span>{{ getDistance(hackathon.address) }}</span>
+        <span>{{ getDistance(hackathon.location) }}</span>
     </div>
 </header>
 <div class="flex-container content">
@@ -20,7 +20,7 @@
         </time>
         <address>
             <a href="">{{ hackathon.host }}</a>
-            {{ hackathon.town }}
+            {{ hackathon.location }}
         </address>
     </section>
     <section class="description">
