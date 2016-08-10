@@ -3,29 +3,29 @@
         <h1>Create new hackathon</h1>
     </header>
     <div class="form-content">
-        <form>
+        <form #hackathonForm="ngForm">
             <fieldset>
                 <h1>
                     Event Details
                 </h1>
                 <div class="form-element">
                     <label>Event Title</label>
-                    <input type="text">
+                    <input type="text" [(ngModel)]="hackathon.title" name="title">
                 </div>
                 <div class="form-element">
                     <label>Location</label>
-                    <input type="text">
+                    <input type="text" [(ngModel)]="hackathon.location" name="location">
                 </div>
                 <div class="form-element">
                     <label>Date</label>
-                    <input type="text">
+                    <input type="text" [(ngModel)]="hackathon.unixStartTime" name="date">
                 </div>
                 <div class="form-element">
                     <label>Description</label>
-                    <textarea></textarea>
+                    <textarea [(ngModel)]="hackathon.description" name="description"></textarea>
                 </div>
                 <button type="submit" class="fab">
-                    <i class="ion-submit"></i>
+                    <i class="ion-android-upload"></i>
                 </button>
             </fieldset>
         </form>
@@ -35,4 +35,5 @@
     <header>
         <h1>Preview</h1>
     </header>
+    <hackathon-card [data]="hackathon"></hackathon-card>
 </section>
