@@ -22,6 +22,7 @@ export function userInitialize(sequelize) {
             type: Sequelize.STRING,
             allowNull: false
         }
+
     }, {
         classMethods: {
             associate: (models: Models) => User.hasOne(models.Addresses)
