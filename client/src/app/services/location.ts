@@ -19,7 +19,6 @@ export class LocationService {
 
     public getDistance(address: string): string {
         // TODO: implement Google Maps Distance Matrix API here
-        return `${Math.floor(Math.random()*1000)/10}km`;
     }
 
     public getGMapsString(address: string): string {

@@ -1,13 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {HackathonModel} from '../../models/hackathon';
 import {HackathonService} from '../../services/hackathon';
-import {HackathonCardComponent} from '../hackathon/hackathonCardComponent';
 import {LocationService, Location} from '../../services/location';
 
 @Component({
     moduleId: __moduleName,
 	selector: 'dashboard',
-    directives: [HackathonCardComponent],
 	templateUrl: 'dashboard.html'
 })
 export class DashboardComponent implements OnInit {
