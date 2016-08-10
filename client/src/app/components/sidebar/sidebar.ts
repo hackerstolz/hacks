@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
 
 type User = {
     name: string,
@@ -10,11 +9,9 @@ type User = {
 @Component({
     moduleId: __moduleName,
     selector: 'sidebar',
-    directives: [ROUTER_DIRECTIVES],
     templateUrl: 'sidebar.html'
 })
 export class SidebarComponent {
-
     private _user;
 
     constructor() {
