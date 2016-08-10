@@ -3,6 +3,7 @@ import Sequelize = require('sequelize');
 export interface HackathonPojo {
     id?: number;
     title: string;
+    host: string;
     description: string;
     unixStartTime: number;
     unixEndTime: number;
@@ -21,16 +22,20 @@ export function hackathonInitialize(sequelize) {
             type: Sequelize.STRING,
             allowNull: false
         },
+        host: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
         description: {
             type: Sequelize.TEXT,
             allowNull: false
         },
         unixStartTime: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.BIGINT,
             allowNull: false
         },
         unixEndTime: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.BIGINT,
             allowNull: false
         },
         location: {
