@@ -10,12 +10,13 @@ const gulp = require('gulp'),
 const project = typescript.createProject(config.files.tsConfig);
 
 gulp.task('build', ['clean'], () => {
-    console.log('build');
-    return gulp.src([config.paths.tsFiles, 'typings/**/*.d.ts'])
+    let stream = gulp.src([config.paths.tsFiles, 'typings/**/*.d.ts'])
         .pipe(sourcemaps.init())
         .pipe(typescript(project))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.paths.build));
+
+    return stream;
 });
 
 gulp.task('clean', () => {
@@ -24,15 +25,18 @@ gulp.task('clean', () => {
     );
 });
 
-gulp.task('serve', ['build'], () => {
+gulp.task('watch', () => {
     nodemon({
-        script: path.join(config.paths.build, 'index.js'),
-        ext: 'js'
-    });
-});
+        script: config.paths.build,
+        watch: config.paths.tsFiles,
+        ext: 'ts',
+        tasks: ['build']
+    })
+        .on('quit', function () {
+            process.exit()
+        })
+        .on('restart', () => { console.log('restarted') })
 
-/*gulp.task('watch', ['build', 'serve'], () => {
-    gulp.watch(config.paths.tsFiles, ['serve']);
-});*/
+});
 
 gulp.task('default', ['clean', 'build']);
