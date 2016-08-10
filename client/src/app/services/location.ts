@@ -17,10 +17,6 @@ export class LocationService {
         this._location = locationObj;
     }
 
-    public getDistance(address: string): string {
-        // TODO: implement Google Maps Distance Matrix API here
-    }
-
     public getGMapsString(address: string): string {
         return 'http://maps.google.com/?daddr=' + address.replace(',', '').replace(' ', '+');
     }
