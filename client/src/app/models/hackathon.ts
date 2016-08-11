@@ -12,8 +12,13 @@ export class HackathonModel {
                 public unixEndTime?: number,
                 public published?: boolean = false) {
         this._distance = `${Math.floor(Math.random() * 1000) / 10}km`;
-        this._startDateObj = new Date(+this.unixStartTime);
-        this._endDateObj = new Date(+this.unixEndTime);
+
+        if(!!this.unixStartTime) {
+            this._startDateObj = new Date(+this.unixStartTime);
+        }
+        if(!!this.unixEndTime) {
+            this._endDateObj = new Date(+this.unixEndTime);
+        }
     }
 
     get startDate(): Date {
