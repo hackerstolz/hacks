@@ -112,7 +112,11 @@ hackathon-form {
 
 @media (-webkit-min-device-pixel-ratio: 2)
 and (max-device-width: 1024px) {
-    section.form { padding: 15px; }
+    section.form {
+        padding: 15px;
+
+        .form-element { flex: 1 1 100%; }
+    }
     section.preview {
         display: none;
     }

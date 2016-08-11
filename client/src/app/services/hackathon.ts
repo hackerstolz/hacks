@@ -10,19 +10,19 @@ export class HackathonService {
     }
 
 	getHackathons(): Observable<any> {
-		return this._http.get(`http://localhost:3000/hackathons`);
+		return this._http.get(`http://${window.location.hostname}:3000/hackathons`);
 	}
 
 	getHackathon(id: number): Observable<any> {
-        return this._http.get(`http://localhost:3000/hackathon/${id}`);
+        return this._http.get(`http://${window.location.hostname}:3000/hackathon/${id}`);
     }
 
 	createHackathon(hackathon: HackathonModel): Observable<any> {
-	    return this._http.post(`http://localhost:3000/hackathon`, hackathon.serialize());
+	    return this._http.post(`http://${window.location.hostname}:3000/hackathon`, hackathon.serialize());
     }
 
 	updateHackathon(hackathon: HackathonModel): Observable<any> {
-	    return this._http.put(`http://localhost:3000/hackathon/${hackathon.id}`, hackathon.serialize());
+	    return this._http.put(`http://${window.location.hostname}:3000/hackathon/${hackathon.id}`, hackathon.serialize());
     }
 }
 
