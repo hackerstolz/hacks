@@ -41,8 +41,9 @@
                     </div>
                 </div>
                 <div class="fab-wrapper">
-                    <button type="submit" class="fab" [disabled]="!hackathonForm.form.valid">
-                        <i class="ion-android-upload"></i>
+                    <button type="submit" class="fab" [disabled]="!hackathonForm.form.valid || submitted" [ngClass]="{ spinner: submitted }">
+                        <i class="ion-android-checkmark-circle" *ngIf="!submitted"></i>
+                        <i class="ion-android-sync" *ngIf="submitted"></i>
                     </button>
                 </div>
             </div>
