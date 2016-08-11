@@ -16,13 +16,17 @@ export class HackathonCardComponent {
     }
 
     ngOnInit() {
-        this.hackathon = new HackathonModel(this._hackathon.id,
-            this._hackathon.title,
-            this._hackathon.host,
-            this._hackathon.location,
-            this._hackathon.description,
-            this._hackathon.unixStartTime,
-            this._hackathon.unixEndTime);
+        if(this._hackathon instanceof HackathonModel) {
+            this.hackathon = this._hackathon;
+        } else {
+            this.hackathon = new HackathonModel(this._hackathon.id,
+                this._hackathon.title,
+                this._hackathon.host,
+                this._hackathon.location,
+                this._hackathon.description,
+                this._hackathon.unixStartTime,
+                this._hackathon.unixEndTime);
+        }
     }
 
     public getGMapsString(address: string): string {
