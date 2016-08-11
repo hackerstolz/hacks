@@ -8,22 +8,26 @@
                 Event Details
             </h1>
         </header>
-        <form #hackathonForm="ngForm">
+        <form #hackathonForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="flex-container">
                 <div class="row">
                     <div class="form-element">
                         <label>Event Title</label>
-                        <input type="text" [(ngModel)]="hackathon.title" name="title">
+                        <input type="text" [(ngModel)]="hackathon.title" name="title" required>
                     </div>
                 </div>
                 <div class="row">
+                    <div class="form-element">
+                        <label>Host</label>
+                        <input type="text" [(ngModel)]="hackathon.host" name="location">
+                    </div>
                     <div class="form-element">
                         <label>Location</label>
                         <input type="text" [(ngModel)]="hackathon.location" name="location">
                     </div>
                     <div class="form-element">
                         <label>Date</label>
-                        <input type="text" [(ngModel)]="hackathon.unixStartTime" name="date">
+                        <input type="date" [ngModel]="hackathon.unixStartTime" name="date">
                     </div>
                 </div>
                 <div class="row">
@@ -33,7 +37,7 @@
                     </div>
                 </div>
                 <div class="fab-wrapper">
-                    <button type="submit" class="fab">
+                    <button type="submit" class="fab" [disabled]="!hackathonForm.form.valid">
                         <i class="ion-android-upload"></i>
                     </button>
                 </div>

@@ -33,7 +33,7 @@ hackathon-form {
 
     .preview {
         flex: 1;
-        padding: 25px;
+        padding: 25px 50px;
 
         hackathon-card {
             float: left;
@@ -92,7 +92,12 @@ hackathon-form {
                 color: #6e6865;
 
                 border: 1px solid #dfdfdf;
-                padding: 10px
+                padding: 10px;
+
+                &:focus {
+                    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+                    outline: none;
+                }
             }
 
             input { height: 35px; max-width: 350px; }
