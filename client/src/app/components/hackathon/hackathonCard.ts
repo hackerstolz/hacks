@@ -25,7 +25,8 @@ export class HackathonCardComponent {
                 this._hackathon.location,
                 this._hackathon.description,
                 this._hackathon.unixStartTime,
-                this._hackathon.unixEndTime);
+                this._hackathon.unixEndTime,
+                this._hackathon.published);
         }
     }
 
