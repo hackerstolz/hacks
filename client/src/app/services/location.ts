@@ -18,6 +18,9 @@ export class LocationService {
     }
 
     public getGMapsString(address: string): string {
+        if(!address) {
+            return;
+        }
         return 'http://maps.google.com/?daddr=' + address.replace(',', '').replace(' ', '+');
     }
 }
