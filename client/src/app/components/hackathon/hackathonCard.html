@@ -14,7 +14,7 @@
 </header>
 <div class="flex-container content">
     <section class="meta">
-        <time [attr.datetime]="hackathon.startDate" *ngIf="hackathon.startDate > 0">
+        <time [attr.datetime]="hackathon.startDate" *ngIf="hackathon.startDate">
             <strong>{{ hackathon.startDate | date:'d' }}</strong>
             {{ hackathon.startDate | date:'MMM' }}
         </time>
