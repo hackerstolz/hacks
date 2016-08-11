@@ -14,9 +14,9 @@
 </header>
 <div class="flex-container content">
     <section class="meta">
-        <time [attr.datetime]="hackathon.date">
-            <strong>{{ hackathon.date | date:'d' }}</strong>
-            {{ hackathon.date | date:'MMM' }}
+        <time [attr.datetime]="hackathon.startDate" *ngIf="hackathon.startDate">
+            <strong>{{ hackathon.startDate | date:'d' }}</strong>
+            {{ hackathon.startDate | date:'MMM' }}
         </time>
         <address>
             <a href="">{{ hackathon.host }}</a>
