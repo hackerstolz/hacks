@@ -1,6 +1,7 @@
 export class HackathonModel {
     private _distance;
-    private _dateObj: Date;
+    private _startDateObj: Date;
+    private _endDateObj: Date;
 
     constructor(public id?: number,
                 public title?: string,
@@ -13,26 +14,48 @@ export class HackathonModel {
         this._distance = `${Math.floor(Math.random() * 1000) / 10}km`;
     }
 
-    get date(): Date {
-        if(!!this._dateObj && !!this.unixStartTime && this._dateObj.getTime() !== this.unixStartTime) {
-            this._dateObj = new Date(+this.unixStartTime);
+    get startDate(): Date {
+        if(!!this._startDateObj && !!this.unixStartTime && this._startDateObj.getTime() !== this.unixStartTime) {
+            this._startDateObj = new Date(+this.unixStartTime);
         }
 
-        return this._dateObj;
+        return this._startDateObj;
     }
 
-    get dateString(): string {
-        if(!this._dateObj) {
+    set startDate(dateString: string) {
+        if(dateString.length > 0) {
+            this._startDateObj = new Date(dateString);
+            this.unixStartTime = this._startDateObj.getTime();
+        }
+    }
+
+    get startDateString(): string {
+        if(!this._startDateObj) {
            return '';
         }
-        return this._dateObj.toISOString().slice(0, 10);
+        return this._startDateObj.toISOString().slice(0, 10);
     }
 
-    set date(dateString: string) {
-        if(dateString.length > 0) {
-            this._dateObj = new Date(dateString);
-            this.unixStartTime = this._dateObj.getTime();
+    get endDate(): Date {
+        if(!!this._endDateObj && !!this.unixEndTime && this._endDateObj.getTime() !== this.unixEndTime) {
+            this._endDateObj = new Date(+this.unixEndTime);
         }
+
+        return this._endDateObj;
+    }
+
+    set endDate(dateString: string) {
+        if(dateString.length > 0) {
+            this._endDateObj = new Date(dateString);
+            this.unixEndTime = this._endDateObj.getTime();
+        }
+    }
+
+    get endDateString(): string {
+        if(!this._endDateObj) {
+           return '';
+        }
+        return this._endDateObj.toISOString().slice(0, 10);
     }
 
     get distance(): string {

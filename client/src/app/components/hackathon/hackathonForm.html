@@ -26,8 +26,12 @@
                         <input type="text" [(ngModel)]="hackathon.location" name="location">
                     </div>
                     <div class="form-element">
-                        <label>Date</label>
-                        <input type="date" [ngModel]="hackathon.dateString" (ngModelChange)="hackathon.date = $event" name="date">
+                        <label>Start-Date</label>
+                        <input type="date" [ngModel]="hackathon.startDateString" (ngModelChange)="hackathon.startDate = $event" name="startDate">
+                    </div>
+                    <div class="form-element">
+                        <label>End-Date</label>
+                        <input type="date" [ngModel]="hackathon.endDateString" (ngModelChange)="hackathon.endDate = $event" name="endDate">
                     </div>
                 </div>
                 <div class="row">
