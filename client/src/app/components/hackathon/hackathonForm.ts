@@ -10,6 +10,6 @@ export class HackathonFormComponent {
     private hackathon: HackathonModel;
 
     constructor() {
-        this.hackathon = new HackathonModel();
+        this.hackathon = new HackathonModel(null, 'testathon');
     }
 }
