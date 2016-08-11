@@ -10,10 +10,12 @@ import {TitlebarComponent} from '../../components/titlebar/titlebar';
 import {HackathonService} from '../../services/hackathon';
 import {LocationService} from '../../services/location';
 import {AppRoutes, appRoutingProviders} from '../../components/app/routes';
+import {DashboardComponent} from '../../components/dashboard/dashboard';
+import {HackathonFormComponent} from '../../components/hackathon/hackathonForm';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpModule, AppRoutes],
-    declarations: [AppComponent, SidebarComponent, TitlebarComponent],
+    declarations: [AppComponent, SidebarComponent, TitlebarComponent, DashboardComponent, HackathonFormComponent],
     bootstrap: [AppComponent],
     providers: [HackathonService, LocationService, { provide: LocationStrategy, useClass: HashLocationStrategy }, appRoutingProviders],
     entryComponents: []
