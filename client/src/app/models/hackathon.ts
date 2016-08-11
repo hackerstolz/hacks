@@ -1,5 +1,6 @@
 export class HackathonModel {
     private _distance;
+    private _dateObj: Date;
 
     constructor(public id?: number,
                 public title?: string,
@@ -13,7 +14,25 @@ export class HackathonModel {
     }
 
     get date(): Date {
-        return new Date(+this.unixStartTime);
+        if(!!this._dateObj && !!this.unixStartTime && this._dateObj.getTime() !== this.unixStartTime) {
+            this._dateObj = new Date(+this.unixStartTime);
+        }
+
+        return this._dateObj;
+    }
+
+    get dateString(): string {
+        if(!this._dateObj) {
+           return '';
+        }
+        return this._dateObj.toISOString().slice(0, 10);
+    }
+
+    set date(dateString: string) {
+        if(dateString.length > 0) {
+            this._dateObj = new Date(dateString);
+            this.unixStartTime = this._dateObj.getTime();
+        }
     }
 
     get distance(): string {

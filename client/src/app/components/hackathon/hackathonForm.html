@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-element">
                         <label>Date</label>
-                        <input type="date" [ngModel]="hackathon.unixStartTime" name="date">
+                        <input type="date" [ngModel]="hackathon.dateString" (ngModelChange)="hackathon.date = $event" name="date">
                     </div>
                 </div>
                 <div class="row">
