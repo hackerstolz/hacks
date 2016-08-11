@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
     moduleId: __moduleName,
@@ -6,11 +6,12 @@ import {Component} from '@angular/core';
     templateUrl: 'titlebar.html'
 })
 export class TitlebarComponent {
-    constructor() {
+    @Output('sidebarToggle') _sidebarToggleEmitter: EventEmitter = new EventEmitter();
 
+    constructor() {
     }
 
     public toggleSidebar() {
-
+        this._sidebarToggleEmitter.emit();
     }
 }

@@ -1,3 +1,3 @@
-<titlebar></titlebar>
-<sidebar></sidebar>
+<titlebar (sidebarToggle)="sidebarToggle()"></titlebar>
+<sidebar [ngClass]="{ visible: sidebarToggleState }"></sidebar>
 <router-outlet></router-outlet>
