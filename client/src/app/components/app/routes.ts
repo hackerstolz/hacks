@@ -10,8 +10,15 @@ const appRoutes: Routes = [{
     path: 'dashboard',
     component: DashboardComponent
 }, {
-    path: 'hackathon/create',
-    component: HackathonFormComponent
+    path: 'hackathon',
+    children: [{
+        path: 'create',
+        component: HackathonFormComponent
+    }, {
+        path: 'edit/:id',
+        component: HackathonFormComponent
+    }]
+
 }];
 
 export const appRoutingProviders: any[] = [];

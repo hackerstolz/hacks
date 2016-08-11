@@ -35,3 +35,10 @@ export class PostRoute extends Route {
         super('post', path, callback);
     }
 }
+
+export class PutRoute extends Route {
+    constructor(public path: string,
+                public callback: RequestHandler) {
+        super('put', path, callback);
+    }
+}
