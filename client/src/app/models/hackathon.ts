@@ -1,12 +1,14 @@
 export class HackathonModel {
     private _distance;
+
     constructor(public id?: number,
                 public title?: string,
                 public host?: string,
                 public location?: string,
                 public description?: string,
                 public unixStartTime?: number,
-                public unixEndTime?: number) {
+                public unixEndTime?: number,
+                public published?: boolean) {
         this._distance = `${Math.floor(Math.random() * 1000) / 10}km`;
     }
 
@@ -24,6 +26,18 @@ export class HackathonModel {
 
     private getTypeFromTime(start: number, end: number): string {
         return `${parseInt((end - start) / 86400000)}-day hackathon`;
+    }
+
+    public serialize(): Object {
+        return {
+            title: this.title,
+            description: this.description,
+            host: this.host,
+            unixStartTime: this.unixStartTime,
+            unixEndTime: this.unixEndTime,
+            location: this.location,
+            published: this.published
+        };
     }
 }
 

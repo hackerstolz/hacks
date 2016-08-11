@@ -10,6 +10,10 @@ export class HackathonFormComponent {
     private hackathon: HackathonModel;
 
     constructor() {
-        this.hackathon = new HackathonModel(null, 'testathon');
+        this.hackathon = new HackathonModel();
+    }
+
+    onSubmit() {
+        console.log(this.hackathon.serialize());
     }
 }
