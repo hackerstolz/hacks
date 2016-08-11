@@ -46,7 +46,7 @@ hackathon-form {
 
         min-height: 250px;
         min-width: 300px;
-        width: ~"calc(100% - 40px)";
+        width: 100%;
 
         box-shadow: 0 3px 15px 0 rgba(0, 0, 0, .07);
         flex: 1;
@@ -106,5 +106,14 @@ hackathon-form {
 
             textarea { min-height: 200px; }
         }
+    }
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2)
+and (max-device-width: 1024px) {
+    section.form { padding: 15px; }
+    section.preview {
+        display: none;
     }
 }
