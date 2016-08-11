@@ -79,6 +79,7 @@ export class HackathonModel {
 
     public serialize(): Object {
         return {
+            id: this.id,
             title: this.title,
             description: this.description,
             host: this.host,

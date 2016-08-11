@@ -23,8 +23,7 @@ export class DashboardComponent implements OnInit {
 	ngOnInit() {
 		this._hackathonService.getHackathons()
             .map(res => res.json())
-            .toPromise()
-            .then(data => this.hackathons = data);
+            .subscribe(data => this.hackathons = data);
 
         navigator.geolocation.getCurrentPosition((position) => {
             this._locationService.location = <Location>{ lat: position.coords.latitude, lon: position.coords.longitude };
