@@ -15,6 +15,7 @@ sidebar {
         position: absolute;
         bottom: 30px;
         left: ~"calc(50% - 25px)";
+        transition: .3s all;
     }
 
     header#product-title {
@@ -147,9 +148,15 @@ sidebar {
         top: 0;
         left: -350px;
 
+        .fab-wrapper { left: -350px; position: fixed; }
+
         &.visible {
             left: 0;
             box-shadow: 0 100px 100px 100px rgba(0,0,0, .5);
+
+            .fab-wrapper {
+                left: ~"calc(50% - 50px)";
+            }
         }
     }
 }
