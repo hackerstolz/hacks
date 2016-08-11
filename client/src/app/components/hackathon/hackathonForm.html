@@ -2,37 +2,56 @@
     <header>
         <h1>Create new hackathon</h1>
     </header>
-    <div class="form-content">
-        <form>
-            <fieldset>
-                <h1>
-                    Event Details
-                </h1>
-                <div class="form-element">
-                    <label>Event Title</label>
-                    <input type="text">
+    <section class="form-content">
+        <header>
+            <h1>
+                Event Details
+            </h1>
+        </header>
+        <form #hackathonForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="flex-container">
+                <div class="row">
+                    <div class="form-element">
+                        <label>Event Title</label>
+                        <input type="text" [(ngModel)]="hackathon.title" name="title" required>
+                    </div>
                 </div>
-                <div class="form-element">
-                    <label>Location</label>
-                    <input type="text">
+                <div class="row">
+                    <div class="form-element">
+                        <label>Host</label>
+                        <input type="text" [(ngModel)]="hackathon.host" name="location">
+                    </div>
+                    <div class="form-element">
+                        <label>Location</label>
+                        <input type="text" [(ngModel)]="hackathon.location" name="location">
+                    </div>
+                    <div class="form-element">
+                        <label>Start-Date</label>
+                        <input type="date" [ngModel]="hackathon.startDateString" (ngModelChange)="hackathon.startDate = $event" name="startDate">
+                    </div>
+                    <div class="form-element">
+                        <label>End-Date</label>
+                        <input type="date" [ngModel]="hackathon.endDateString" (ngModelChange)="hackathon.endDate = $event" name="endDate">
+                    </div>
                 </div>
-                <div class="form-element">
-                    <label>Date</label>
-                    <input type="text">
+                <div class="row">
+                    <div class="form-element">
+                        <label>Description</label>
+                        <textarea [(ngModel)]="hackathon.description" name="description"></textarea>
+                    </div>
                 </div>
-                <div class="form-element">
-                    <label>Description</label>
-                    <textarea></textarea>
+                <div class="fab-wrapper">
+                    <button type="submit" class="fab" [disabled]="!hackathonForm.form.valid">
+                        <i class="ion-android-upload"></i>
+                    </button>
                 </div>
-                <button type="submit" class="fab">
-                    <i class="ion-submit"></i>
-                </button>
-            </fieldset>
+            </div>
         </form>
-    </div>
+    </section>
 </section>
 <section class="preview">
     <header>
         <h1>Preview</h1>
     </header>
+    <hackathon-card [data]="hackathon"></hackathon-card>
 </section>
