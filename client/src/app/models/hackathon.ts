@@ -10,7 +10,7 @@ export class HackathonModel {
                 public description?: string,
                 public unixStartTime?: number,
                 public unixEndTime?: number,
-                public published?: boolean) {
+                public published?: boolean = false) {
         this._distance = `${Math.floor(Math.random() * 1000) / 10}km`;
     }
 
