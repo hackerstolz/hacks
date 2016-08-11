@@ -154,6 +154,7 @@
         gulp.task('[private-web]:start-live-server', ['build-web'], function () {
             return gulp.src(config.targets.buildFolder)
                 .pipe(server({
+                    host: '0.0.0.0',
                     livereload: true,
                     open: true
                 }));
@@ -165,8 +166,6 @@
 
         function deltaWatch() {
             return watch(config.source.files.app.everything, batch(function (events, done) {
-                console.log(arguments);
-
                 runSequence('[private-web]:copy-system-setup-script', '[private-web]:copy-app-html', '[private-web]:compile-less', '[private-web]:build-app-scripts', done);
             }));
         }
