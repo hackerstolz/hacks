@@ -141,8 +141,16 @@ sidebar {
 
 @media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 420px) {
     sidebar {
-        position: absolute;
+        overflow-y: scroll;
+        position: fixed;
+        bottom: 0;
+        top: 0;
         left: -350px;
+
+        &.visible {
+            left: 0;
+            box-shadow: 0 100px 100px 100px rgba(0,0,0, .5);
+        }
     }
 }
 

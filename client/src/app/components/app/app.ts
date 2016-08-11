@@ -6,7 +6,17 @@ import {Component} from '@angular/core';
     templateUrl: 'app.html'
 })
 export class AppComponent {
+    private _isSidebarVisible: boolean = false;
+
     constructor() {
 
+    }
+
+    sidebarToggle() {
+        this._isSidebarVisible = !this._isSidebarVisible;
+    }
+
+    get sidebarToggleState(): boolean {
+        return this._isSidebarVisible;
     }
 }
