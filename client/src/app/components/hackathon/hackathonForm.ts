@@ -41,21 +41,23 @@ export class HackathonFormComponent implements OnInit {
 
         let action;
 
-        if (!!this.hackathon.id) {
-            action = this._hackathonService.updateHackathon(this.hackathon);
-        } else {
-            action = this._hackathonService.createHackathon(this.hackathon);
-        }
-
-        action.subscribe((res) => {
-            if (res.status === 200) {
-                this._router.navigateByUrl('/dashboard');
+        setTimeout(_ => {
+            if (!!this.hackathon.id) {
+                action = this._hackathonService.updateHackathon(this.hackathon);
+            } else {
+                action = this._hackathonService.createHackathon(this.hackathon);
             }
-        }, (err) => {
-            console.log(err);
-            this._submitted = false;
-        });
 
+            action.subscribe((res) => {
+                if (res.status === 200) {
+                    this._router.navigateByUrl('/dashboard');
+                }
+            }, (err) => {
+                console.log(err);
+                this._submitted = false;
+            });
+
+        }, 250);
     }
 
     get submitted(): boolean {
