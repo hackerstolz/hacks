@@ -1,15 +1,21 @@
 @import 'components/_index.less';
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
-a, button { cursor: pointer; }
+a, button {
+    cursor: pointer;
+}
 
 button {
     background: none;
     border: none;
 }
 
-.flex-container { display: flex; }
+.flex-container {
+    display: flex;
+}
 
 app-root {
     font: normal 13px "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -27,7 +33,41 @@ dashboard {
     align-content: flex-start;
 }
 
+loader {
+    font: normal 30px "Montserrat";
+    color: #465153;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    bracket {
+        padding: 0 5px;
+
+        &:first-of-type {
+            animation: loading-bracket 1.5s infinite;
+            animation-delay: .5s;
+        }
+        &:last-of-type {
+            animation: loading-bracket 1s infinite;
+        }
+    }
+}
+
+@keyframes loading-bracket {
+    0% { opacity: .5; transform: scale3d(1.5, 1.5, 1.5) translateX(0%) }
+    50% { opacity: 1; transform: scale3d(1, 1, 1)  translateX(50%) }
+    100% { opacity: .5; transform: scale3d(1.5, 1.5, 1.5)  translateX(0%) }
+}
+
 @media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 420px) {
-    app-root { padding: 75px 0; }
+    app-root {
+        padding: 75px 0;
+    }
 }
 
