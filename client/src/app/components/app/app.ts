@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Router, NavigationEnd} from '@angular/router';
 
 @Component({
     moduleId: __moduleName,
@@ -8,8 +9,12 @@ import {Component} from '@angular/core';
 export class AppComponent {
     private _isSidebarVisible: boolean = false;
 
-    constructor() {
-
+    constructor(private _router: Router) {
+        _router.events.subscribe((event) => {
+            if(event instanceof NavigationEnd && this._isSidebarVisible) {
+                this.sidebarToggle();
+            }
+        });
     }
 
     sidebarToggle() {
