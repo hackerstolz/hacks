@@ -43,6 +43,7 @@ const config = {
                 ]
             },
             cordova: '',
+            cordovaFiles: './cordova/',
             vendorStylesheets: [],
             vendorFonts: [],
             shim: [
@@ -64,6 +65,7 @@ const config = {
         vendorMinJs: 'vendor.min.js',
         vendorMinCss: 'vendor.min.css',
         buildFolder: './dist/www',
+        cordovaFolder: './dist/mobile',
         resourcesFolder: './resources/',
         hooksFolder: './cordova/hooks/',
         appFolder: 'app',
