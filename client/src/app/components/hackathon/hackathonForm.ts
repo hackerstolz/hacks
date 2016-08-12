@@ -19,20 +19,22 @@ export class HackathonFormComponent implements OnInit {
 
     ngOnInit() {
         this._route.params.subscribe((params) => {
-            let id = +params['id'];
-            this._hackathonService.getHackathon(id)
-                .map(res => res.json())
-                .subscribe(data => {
-                    let hackathon = data[0];
-                    this.hackathon = new HackathonModel(hackathon.id,
-                        hackathon.title,
-                        hackathon.host,
-                        hackathon.location,
-                        hackathon.description,
-                        hackathon.unixStartTime,
-                        hackathon.unixEndTime,
-                        hackathon.published);
-                });
+            if (!!params['id']) {
+                let id = +params['id'];
+                this._hackathonService.getHackathon(id)
+                    .map(res => res.json())
+                    .subscribe(data => {
+                        let hackathon = data[0];
+                        this.hackathon = new HackathonModel(hackathon.id,
+                            hackathon.title,
+                            hackathon.host,
+                            hackathon.location,
+                            hackathon.description,
+                            hackathon.unixStartTime,
+                            hackathon.unixEndTime,
+                            hackathon.published);
+                    });
+            }
         });
     }
 
