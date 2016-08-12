@@ -1,0 +1,44 @@
+tabbar {
+    background: linear-gradient(180deg, #fff, #f7faff);
+
+    height: 60px;
+
+    border-top: 1px solid #c6e1ef;
+    box-shadow: 0 -2px 5px 0px rgba(0,0,0, .1);
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+
+    nav {
+        ul {
+            height: 60px;
+
+            display: flex;
+
+            li {
+                color: #6e6865;
+
+                flex: 1;
+
+                a {
+                    width: 100%;
+                    height: 100%;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                i { font-size: 30px; line-height: 0; }
+            }
+        }
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 420px) {
+    tabbar { display: block; }
+}
