@@ -16,9 +16,9 @@ export class SidebarComponent {
 
     constructor() {
         this.user = {
-            name: 'Manuel Rauber',
-            title: 'Chief Hacker in Command',
-            location: 'Karlsruhe, DE'
+            name: 'Brendan G. Lim',
+            title: 'Product Manager',
+            location: 'San Mateo, CA'
         }
     }
 
