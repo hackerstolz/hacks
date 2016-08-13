@@ -48,6 +48,7 @@ loader {
 
     bracket {
         padding: 0 5px;
+        will-change: transform, opacity;
 
         &:first-of-type {
             animation: loading-bracket 1.5s infinite;
@@ -60,9 +61,9 @@ loader {
 }
 
 @keyframes loading-bracket {
-    0% { opacity: .5; transform: scale3d(1.5, 1.5, 1.5) translateX(0%) }
-    50% { opacity: 1; transform: scale3d(1, 1, 1)  translateX(50%) }
-    100% { opacity: .5; transform: scale3d(1.5, 1.5, 1.5)  translateX(0%) }
+    0% { opacity: .5; transform: scale(1.5) }
+    50% { opacity: 1; transform: scale(1) }
+    100% { opacity: .5; transform: scale(1.5) }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 420px) {
