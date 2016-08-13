@@ -58,7 +58,6 @@ sidebar {
 
             h1, h2, h3 {
                 float: left;
-                flex: 0 0 100%;
             }
 
             h1 {
@@ -147,6 +146,7 @@ sidebar {
         width: 100%;
 
         overflow-y: scroll;
+        padding-bottom: 50vh;
         position: fixed;
         bottom: 0;
         top: 0;
@@ -162,6 +162,11 @@ sidebar {
                 left: auto;
                 right: 25px;
             }
+        }
+
+        /* fix for awkward scrolling behaviour on mobile safari */
+        .sidebar-group:last-of-type {
+            margin-bottom: 50%;
         }
     }
 }
