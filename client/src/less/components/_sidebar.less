@@ -15,7 +15,6 @@ sidebar {
         position: absolute;
         bottom: 30px;
         left: ~"calc(50% - 25px)";
-        transition: .3s all;
     }
 
     header#product-title {
@@ -150,18 +149,14 @@ sidebar {
         position: fixed;
         bottom: 0;
         top: 0;
-        left: -100%;
+        transform: translateX(-100%);
+        will-change: transform;
 
-        .fab-wrapper { bottom: 75px; left: auto; right: 110%; position: fixed; }
+        .fab-wrapper { bottom: 75px; left: auto; right: 15px; position: fixed; }
 
         &.visible {
-            left: 0;
+            transform: translateX(0);
             box-shadow: 0 100px 100px 100px rgba(0,0,0, .5);
-
-            .fab-wrapper {
-                left: auto;
-                right: 25px;
-            }
         }
 
         /* fix for awkward scrolling behaviour on mobile safari */
