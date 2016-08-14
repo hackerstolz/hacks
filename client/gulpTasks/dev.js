@@ -110,12 +110,18 @@ gulp.task('dev:index', () => {
 gulp.task('dev:index:watch', () => watch(config.index,
     batch((events, done) => runSequence('dev:index', done))));
 
+gulp.task('dev:assets', () => {
+    return gulp.src(config.sources.assets)
+        .pipe(gulp.dest(config.targets.assets));
+});
+
 gulp.task('dev-build', done => {
     runSequence(
         'dev:clean',
-        // We need to define useful rules, before using this.
+        // TODO: We need to define useful rules, before using this.
         // 'dev:lint',
         [
+            'dev:assets',
             'dev:vendorScripts',
             'dev:nodeModules',
             'dev:scripts',
