@@ -42,17 +42,14 @@ function createTypeScriptPipe(sources, fastTranspilation) {
     return ts.js
         .pipe(count('Transpiled ## files'))
         .pipe(sourceMaps.write('.'))
-        .pipe(gulp.dest(config.targets.build));
+        .pipe(gulp.dest(config.targets.build))
+        .on('end', () => browserSync.reload());
 }
 
 gulp.task('dev:scripts', () => createTypeScriptPipe(gulp.src(config.sources.scripts)));
 
 gulp.task('dev:scripts:watch', () => watch([...config.sources.scripts, ...config.sources.templates],
-    batch(events => {
-        const tsPipe = createTypeScriptPipe(events, true);
-
-        tsPipe.on('end', () => browserSync.reload());
-    })));
+    batch(events => createTypeScriptPipe(events, true))));
 
 function createLessPipe(sources) {
     return sources
@@ -61,14 +58,14 @@ function createLessPipe(sources) {
         .pipe(autoprefixer({ browsers: config.browsers }))
         .pipe(count('Preprocessed ## style files'))
         .pipe(sourceMaps.write('.'))
-        .pipe(gulp.dest(`${config.targets.build}/css`));
+        .pipe(gulp.dest(`${config.targets.build}/css`))
+        .pipe(browserSync.stream({ match: '**/*.css' }));
 }
 
 gulp.task('dev:styles', () => createLessPipe(gulp.src(config.sources.styles.main)));
 
 gulp.task('dev:styles:watch', () => watch(config.sources.styles.all,
-    batch(events => createLessPipe(gulp.src(config.sources.styles.main))
-        .pipe(browserSync.stream({ match: '**/*.css' })))));
+    batch(events => createLessPipe(gulp.src(config.sources.styles.main)))));
 
 gulp.task('dev:watch:init', done => {
     browserSync.init(config.browserSync, done);
@@ -86,7 +83,8 @@ gulp.task('dev:nodeModules', () => {
 
 gulp.task('dev:systemJs', () => {
     return gulp.src(config.systemJs)
-        .pipe(gulp.dest(config.targets.build));
+        .pipe(gulp.dest(config.targets.build))
+        .on('end', () => browserSync.reload());
 });
 
 gulp.task('dev:systemJs:watch', () => watch(config.systemJs,
@@ -105,7 +103,8 @@ gulp.task('dev:index', () => {
             addRootSlash: false,
             ignorePath: config.targets.build
         }))
-        .pipe(gulp.dest(config.targets.build));
+        .pipe(gulp.dest(config.targets.build))
+        .on('end', () => browserSync.reload());
 });
 
 gulp.task('dev:index:watch', () => watch(config.index,
