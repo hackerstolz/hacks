@@ -27,7 +27,7 @@ gulp.task('clean', () => {
     );
 });
 
-gulp.task('watch', () => {
+gulp.task('watch', ['build'], () => {
     nodemon({
         script: config.paths.build,
         watch: config.paths.tsFiles,
