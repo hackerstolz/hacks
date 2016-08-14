@@ -5,12 +5,7 @@ Client for upcoming demo app. Stay tuned!
 
 ## Installation and Setup
 
-```bash
-cd /path/to/client;
-
-npm install;
-npm run-script watch;
-```
+Execute `npm i` to install all necessary packages and then `npm run watch` to start up the development server.
 
 ## Code Style Guide
 ### Namings
