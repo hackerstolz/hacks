@@ -20,11 +20,15 @@ const config = {
             main: [
                 'src/less/app.less'
             ]
-        }
+        },
+        assets: [
+            'src/assets/**/*'
+        ]
     },
     targets: {
         build: 'build',
-        lib: 'build/lib'
+        lib: 'build/lib',
+        assets: 'build/assets'
     },
     typescript: {
         target: 'ES5',
