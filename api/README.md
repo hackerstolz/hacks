@@ -5,7 +5,7 @@ Web API for upcoming demo app. Stay tuned!
 ## Setup
 ### Database
 
-Add a user named `hacks` with the password `hacks` to your local PostgreSQL instance. The app will then initialize a database.
+Add a user named `hacks` with the password `hacks` to your local PostgreSQL instance. Also create a new database `hacks`. The app will then initialize all necessary tables.
  
 ### Building & Running {Hacks}
 
