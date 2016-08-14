@@ -118,7 +118,7 @@ gulp.task('dev:assets', () => {
 gulp.task('dev-build', done => {
     runSequence(
         'dev:clean',
-        // We need to define useful rules, before using this.
+        // TODO: We need to define useful rules, before using this.
         // 'dev:lint',
         [
             'dev:assets',
