@@ -1,9 +1,13 @@
 'use strict';
 
+const path = require('path');
+
 const currentPackage = require('../package.json');
 
 const config = {
+    name: '{Hacks}',
     module: currentPackage.name,
+    version: currentPackage.version,
     base: 'src',
     index: 'src/index.html',
     systemJs: 'src/systemSetup.js',
@@ -20,11 +24,25 @@ const config = {
             main: [
                 'src/less/app.less'
             ]
+        },
+        assets: [
+            'src/assets/**/*'
+        ],
+        buildAssets: {
+            cordovaJs: 'resources/cordova/cordova.js',
+            config: 'resources/cordova/config.xml',
+            hooks: 'resources/cordova/hooks/**/*',
+            electron: 'resources/electron/**/*',
+            icons: 'resources/icons/*',
+            iconsFolder: 'resources/icons'
         }
     },
     targets: {
         build: 'build',
-        lib: 'build/lib'
+        lib: 'build/lib',
+        assets: 'build/assets',
+        cordova: 'dist/mobile',
+        electron: 'dist/desktop'
     },
     typescript: {
         target: 'ES5',
@@ -44,7 +62,7 @@ const config = {
         open: true,
         server: {
             baseDir: './build',
-            middleware: { }
+            middleware: {}
         },
         port: 8000
     },
@@ -59,5 +77,11 @@ const config = {
         'rxjs'
     ]
 };
+
+config.injectables = [
+    ...config.vendorScripts.map(v => path.join(config.targets.lib, v.split('/').slice(-1)[0])),
+    path.join(config.targets.build, config.systemJs.split('/').slice(-1)[0]),
+    path.join(config.targets.build, '**/*.css')
+];
 
 module.exports = config;

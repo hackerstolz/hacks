@@ -8,7 +8,9 @@
   },
   "scripts": {
     "postinstall": "typings install",
-    "watch": "gulp dev-watch"
+    "watch": "gulp dev-watch",
+    "build-mobile": "gulp cordova-build",
+    "build-desktop": "gulp electron-build"
   },
   "repository": {
     "type": "git",
@@ -31,9 +33,13 @@
     "@angular/router": "3.0.0-rc.1",
     "browser-sync": "2.14.0",
     "codelyzer": "0.0.28",
+    "cordova": "6.3.1",
+    "cordova-icon": "0.7.0",
+    "cordova-splash": "0.7.1",
     "core-js": "2.4.0",
     "del": "2.2.2",
     "gulp": "3.9.1",
+    "gulp-atom-electron": "1.9.0",
     "gulp-autoprefixer": "3.1.1",
     "gulp-batch": "1.0.5",
     "gulp-count": "0.2.0",
@@ -41,6 +47,7 @@
     "gulp-inline-ng2-template": "3.0.0",
     "gulp-less": "3.1.0",
     "gulp-sourcemaps": "1.6.0",
+    "gulp-symdest": "1.0.0",
     "gulp-tslint": "6.0.2",
     "gulp-typescript": "2.13.6",
     "gulp-watch": "4.3.9",
@@ -48,10 +55,11 @@
     "reflect-metadata": "0.1.3",
     "run-sequence": "1.2.2",
     "rxjs": "5.0.0-beta.6",
+    "shelljs": "0.7.3",
     "systemjs": "0.19.27",
     "tslint": "3.14.0",
     "typescript": "1.8.10",
-    "typings": "1.3.0",
-    "zone.js": "0.6.12"
+    "typings": "1.3.2",
+    "zone.js": "0.6.13"
   }
 }

@@ -91,11 +91,7 @@ gulp.task('dev:systemJs:watch', () => watch(config.systemJs,
     batch((events, done) => runSequence('dev:systemJs', done))));
 
 gulp.task('dev:index', () => {
-    const injectables = gulp.src([
-            ...config.vendorScripts.map(v => path.join(config.targets.lib, v.split('/').slice(-1)[0])),
-            path.join(config.targets.build, config.systemJs.split('/').slice(-1)[0]),
-            path.join(config.targets.build, '**/*.css')
-        ],
+    const injectables = gulp.src(config.injectables,
         { read: false });
 
     return gulp.src(config.index)
@@ -110,12 +106,31 @@ gulp.task('dev:index', () => {
 gulp.task('dev:index:watch', () => watch(config.index,
     batch((events, done) => runSequence('dev:index', done))));
 
+gulp.task('dev:assets', () => {
+    return gulp.src(config.sources.assets)
+        .pipe(gulp.dest(config.targets.assets));
+});
+
+gulp.task('dev:watch', done => {
+    runSequence(
+        'dev:watch:init',
+        [
+            'dev:scripts:watch',
+            'dev:styles:watch',
+            'dev:systemJs:watch',
+            'dev:index:watch'
+        ],
+        done
+    );
+});
+
 gulp.task('dev-build', done => {
     runSequence(
         'dev:clean',
-        // We need to define useful rules, before using this.
+        // TODO: We need to define useful rules, before using this.
         // 'dev:lint',
         [
+            'dev:assets',
             'dev:vendorScripts',
             'dev:nodeModules',
             'dev:scripts',
@@ -131,19 +146,6 @@ gulp.task('dev-watch', done => {
     runSequence(
         'dev-build',
         'dev:watch',
-        done
-    );
-});
-
-gulp.task('dev:watch', done => {
-    runSequence(
-        'dev:watch:init',
-        [
-            'dev:scripts:watch',
-            'dev:styles:watch',
-            'dev:systemJs:watch',
-            'dev:index:watch'
-        ],
         done
     );
 });

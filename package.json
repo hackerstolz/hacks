@@ -1,0 +1,15 @@
+{
+  "name": "thinktecture-hacks",
+  "version": "1.0.0",
+  "description": "Sample used to demonstrate modern cross-platform applications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinktecture/thinktecture-hacks.git"
+  },
+  "author": "Thinktecture AG <office@thinktecture.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thinktecture/thinktecture-hacks/issues"
+  },
+  "homepage": "https://github.com/thinktecture/thinktecture-hacks#readme"
+}
