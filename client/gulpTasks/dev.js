@@ -24,7 +24,7 @@ gulp.task('dev:lint', () => {
         .pipe(tslint({
             formatter: 'verbose'
         }))
-        .pipe(tslint.report({ emitError: false }))
+        .pipe(tslint.report({ emitError: false }));
 });
 
 function createTypeScriptPipe(sources, fastTranspilation) {
@@ -89,7 +89,7 @@ gulp.task('dev:systemJs', () => {
         .pipe(gulp.dest(config.targets.build));
 });
 
-gulp.task('dev:systemJs:watch', watch(config.systemJs,
+gulp.task('dev:systemJs:watch', () => watch(config.systemJs,
     batch((events, done) => runSequence('dev:systemJs', done))));
 
 gulp.task('dev:index', () => {
@@ -108,7 +108,7 @@ gulp.task('dev:index', () => {
         .pipe(gulp.dest(config.targets.build));
 });
 
-gulp.task('dev:index:watch', watch(config.index,
+gulp.task('dev:index:watch', () => watch(config.index,
     batch((events, done) => runSequence('dev:index', done))));
 
 gulp.task('dev-build', done => {
