@@ -19,7 +19,7 @@ export class HackathonService {
     }
 
 	createHackathon(hackathon: HackathonModel): Observable<any> {
-	    return this._http.post(this._url.getEndpoint(`hackathon`), hackathon.serialize());
+	    return this._http.post(this._url.getEndpoint('hackathon'), hackathon.serialize());
     }
 
 	updateHackathon(hackathon: HackathonModel): Observable<any> {
