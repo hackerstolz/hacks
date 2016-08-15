@@ -1,5 +1,7 @@
 'use strict';
 
+const path = require('path');
+
 const currentPackage = require('../package.json');
 
 const config = {
@@ -23,12 +25,19 @@ const config = {
         },
         assets: [
             'src/assets/**/*'
-        ]
+        ],
+        buildAssets: {
+            cordovaJs: 'resources/cordova/cordova.js',
+            config: 'resources/cordova/config.xml',
+            hooks: 'resources/cordova/hooks/**/*',
+            icons: 'resources/icons/*'
+        }
     },
     targets: {
         build: 'build',
         lib: 'build/lib',
-        assets: 'build/assets'
+        assets: 'build/assets',
+        cordova: 'dist/mobile'
     },
     typescript: {
         target: 'ES5',
@@ -48,7 +57,7 @@ const config = {
         open: true,
         server: {
             baseDir: './build',
-            middleware: { }
+            middleware: {}
         },
         port: 8000
     },
@@ -63,5 +72,11 @@ const config = {
         'rxjs'
     ]
 };
+
+config.injectables = [
+    ...config.vendorScripts.map(v => path.join(config.targets.lib, v.split('/').slice(-1)[0])),
+    path.join(config.targets.build, config.systemJs.split('/').slice(-1)[0]),
+    path.join(config.targets.build, '**/*.css')
+];
 
 module.exports = config;

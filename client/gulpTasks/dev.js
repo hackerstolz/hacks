@@ -91,11 +91,7 @@ gulp.task('dev:systemJs:watch', () => watch(config.systemJs,
     batch((events, done) => runSequence('dev:systemJs', done))));
 
 gulp.task('dev:index', () => {
-    const injectables = gulp.src([
-            ...config.vendorScripts.map(v => path.join(config.targets.lib, v.split('/').slice(-1)[0])),
-            path.join(config.targets.build, config.systemJs.split('/').slice(-1)[0]),
-            path.join(config.targets.build, '**/*.css')
-        ],
+    const injectables = gulp.src(config.injectables,
         { read: false });
 
     return gulp.src(config.index)
