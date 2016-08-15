@@ -5,7 +5,9 @@ const path = require('path');
 const currentPackage = require('../package.json');
 
 const config = {
+    name: '{Hacks}',
     module: currentPackage.name,
+    version: currentPackage.version,
     base: 'src',
     index: 'src/index.html',
     systemJs: 'src/systemSetup.js',
@@ -30,14 +32,17 @@ const config = {
             cordovaJs: 'resources/cordova/cordova.js',
             config: 'resources/cordova/config.xml',
             hooks: 'resources/cordova/hooks/**/*',
-            icons: 'resources/icons/*'
+            electron: 'resources/electron/**/*',
+            icons: 'resources/icons/*',
+            iconsFolder: 'resources/icons'
         }
     },
     targets: {
         build: 'build',
         lib: 'build/lib',
         assets: 'build/assets',
-        cordova: 'dist/mobile'
+        cordova: 'dist/mobile',
+        electron: 'dist/desktop'
     },
     typescript: {
         target: 'ES5',

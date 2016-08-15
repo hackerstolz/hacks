@@ -22,9 +22,7 @@ function executeInCordovaFolder(action) {
     }
 }
 
-gulp.task('cordova:clean:all', () => {
-    return del(config.targets.cordova);
-});
+gulp.task('cordova:clean:all', () => del(config.targets.cordova));
 
 gulp.task('cordova:clean:www', () => del(cordovaWwwFolder));
 

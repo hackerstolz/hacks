@@ -7,6 +7,11 @@ Client for upcoming demo app. Stay tuned!
 
 Execute `npm i` to install all necessary packages and then `npm run watch` to start up the development server.
 
+### Platforms
+
+* `npm run build-desktop`: Builds the desktop platforms (win, linux, macOs)
+* `npm run build-mobile`: Builds the desktop platforms (android, iOS, WinPhone)
+
 ## Code Style Guide
 ### Namings
 
