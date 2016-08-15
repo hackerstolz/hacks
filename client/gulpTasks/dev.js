@@ -115,6 +115,19 @@ gulp.task('dev:assets', () => {
         .pipe(gulp.dest(config.targets.assets));
 });
 
+gulp.task('dev:watch', done => {
+    runSequence(
+        'dev:watch:init',
+        [
+            'dev:scripts:watch',
+            'dev:styles:watch',
+            'dev:systemJs:watch',
+            'dev:index:watch'
+        ],
+        done
+    );
+});
+
 gulp.task('dev-build', done => {
     runSequence(
         'dev:clean',
@@ -137,19 +150,6 @@ gulp.task('dev-watch', done => {
     runSequence(
         'dev-build',
         'dev:watch',
-        done
-    );
-});
-
-gulp.task('dev:watch', done => {
-    runSequence(
-        'dev:watch:init',
-        [
-            'dev:scripts:watch',
-            'dev:styles:watch',
-            'dev:systemJs:watch',
-            'dev:index:watch'
-        ],
         done
     );
 });
